@@ -1,16 +1,15 @@
 // @ts-check
 
-import js from '@eslint/js';
-import { defineConfig } from 'eslint/config';
-import tseslint from 'typescript-eslint';
+import js from "@eslint/js";
+import { defineConfig } from "eslint/config";
+import tseslint from "typescript-eslint";
 
 export default defineConfig([
   {
-    ignores: ['dist', 'node_modules']
+    ignores: ["dist", "node_modules"],
   },
   {
-    
-    files: ['**/*.{js,ts}'],
+    files: ["**/*.{js,ts}"],
     extends: [
       js.configs.recommended,
       ...tseslint.configs.recommendedTypeChecked,
@@ -20,9 +19,9 @@ export default defineConfig([
         projectService: true,
       },
     },
-    rules:{
-      // "no-console":"error",
+    rules: {
+      "no-console":"error",
       "dot-notation": "error",
-    }
+    },
   },
 ]);
