@@ -12,10 +12,10 @@
   },
   "license": "ISC",
   "author": "Prashasth Singh <prashasth068@gmail.com>",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
-    "dev": "node src/server.js",
+    "dev": "tsc && node dist/server.js",
     "format:fix": "prettier . --write",
     "format:check": "prettier . --check",
     "lint:check": "eslint .",
@@ -38,5 +38,8 @@
       "npm run format:fix",
       "npm run lint:fix"
     ]
+  },
+  "dependencies": {
+    "dotenv": "^17.4.2"
   }
 }

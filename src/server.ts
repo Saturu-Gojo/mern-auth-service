@@ -1,5 +1,3 @@
-function welcome(name: string) {
-  return name;
-}
+import { Config } from "./config/index.js";
 
-welcome("Prashasth");
+console.log(Config.PORT);
