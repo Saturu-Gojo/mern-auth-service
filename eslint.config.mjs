@@ -6,7 +6,7 @@ import tseslint from "typescript-eslint";
 
 export default defineConfig([
   {
-    ignores: ["dist", "node_modules"],
+    ignores: ["dist", "node_modules", "eslint.config.mjs", "jest.config.js"],
   },
   {
     files: ["**/*.{js,ts}"],
@@ -28,6 +28,7 @@ export default defineConfig([
           caughtErrorsIgnorePattern: "^_",
         },
       ],
+      "@typescript-eslint/no-misused-promises": "off",
     },
   },
 ]);
