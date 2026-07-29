@@ -7,7 +7,6 @@ import logger from "./config/logger.js";
 import type { HttpError } from "http-errors";
 
 const app = express();
-
 app.get("/", (req, res) => {
   res.send("Welcome to Auth Server");
 });
