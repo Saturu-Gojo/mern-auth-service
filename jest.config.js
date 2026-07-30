@@ -3,7 +3,7 @@ import { createDefaultPreset } from "ts-jest";
 /** @type {import("jest").Config} **/
 export default {
   testEnvironment: "node",
-  roots: ["<rootDir>/src"],
+  roots: ["<rootDir>/src", "<rootDir>/tests"],
   transform: {
     "^.+\\.tsx?$": [
       "ts-jest",
@@ -18,4 +18,5 @@ export default {
   moduleNameMapper: {
     "^(\\.{1,2}/.*)\\.js$": "$1",
   },
+  verbose: true,
 };

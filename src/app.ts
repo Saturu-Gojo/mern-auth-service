@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import express, {
   type NextFunction,
   type Request,
@@ -5,11 +6,14 @@ import express, {
 } from "express";
 import logger from "./config/logger.js";
 import type { HttpError } from "http-errors";
+import authRouter from "./routes/auth.js";
 
 const app = express();
 app.get("/", (req, res) => {
   res.send("Welcome to Auth Server");
 });
+
+app.use("/auth", authRouter);
 
 //global error handler
 app.use((err: HttpError, req: Request, res: Response, _next: NextFunction) => {
