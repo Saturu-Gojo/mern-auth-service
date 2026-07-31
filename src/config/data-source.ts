@@ -1,16 +1,19 @@
 import "reflect-metadata";
 import { DataSource } from "typeorm";
+import { User } from "../entities/User.js";
+import { Config } from "./index.js";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
-  host: process.env.DB_HOST || "localhost",
-  port: Number(process.env.DB_PORT) || 5432,
-  username: process.env.DB_USERNAME || "root",
-  password: process.env.DB_PASSWORD || "root",
-  database: process.env.DB_NAME || "mernpg",
-  synchronize: true,
+  host: Config.DB_HOST,
+  port: Number(Config.DB_PORT),
+  username: Config.DB_USERNAME,
+  password: Config.DB_PASSWORD,
+  database: Config.DB_NAME,
+  //don't use this in roduction
+  synchronize: Config.NODE_ENV === "test" || Config.NODE_ENV === "dev",
   logging: false,
-  entities: [],
-  subscribers: [],
+  entities: [User],
   migrations: [],
+  subscribers: [],
 });
